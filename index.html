@@ -23,11 +23,18 @@
          s2.innerHTML=d.data.slice((d.data.length-4),d.data.length)
          if (d.data.slice(0) > d.data.slice(1) && d.data.slice(0) > d.data.slice(2)){
             s3.innerHTML="Punane"}
+			eksport("Punane")
          else if (d.data.slice(1) > d.data.slice(0) && d.data.slice(1) > d.data.slice(2)){
             s3.innerHTML="Roheline"}
+			eksport("Roheline")
          else if (d.data.slice(2) > d.data.slice(1) && d.data.slice(2) > d.data.slice(0)){
             s3.innerHTML="Sinine"}
+		  	eksport("Sinine")
 	  }
+	function eksport(varv){
+	  let leht = SpreadsheetApp.openById("15kgZzUO1Fg0MAyi30EGWRJtWnMw_4zMv3NjUEmIeqPg").getSheets()[0];
+	  leht.getRange(1 ,1).setValue(varv);
+}
 	</script>
   </head>
   <body onload="start()">
